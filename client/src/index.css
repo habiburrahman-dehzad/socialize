@@ -1,0 +1,13 @@
+header.ant-layout-header .logo {
+  float: left;
+  margin-right: 24px;
+}
+
+.ant-row-rtl header.ant-layout-header .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+
+.header h3 {
+  color: whitesmoke;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "socialize-app",
+  "version": "1.0.0",
+  "description": "A web application to socialize and connect with the people",
+  "main": "server.js",
+  "author": "Habiburrahman Dehzad",
+  "license": "MIT",
+  "scripts": {
+    "server": "nodemon server.js",
+    "client": "yarn --cwd ./client/ start",
+    "build-client": "yarn --cwd ./client/ build",
+    "test-client": "yarn --cwd ./client/ test",
+    "eject-client": "yarn --cwd ./client/ eject",
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "seed": "node seedDb.js"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "mongoose-seed": "^0.6.0",
+    "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "mongoose": "^6.0.5"
+  }
+}
