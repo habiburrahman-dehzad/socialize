@@ -6,7 +6,7 @@ import Root from './Root';
 import App from './components/App';
 
 ReactDOM.render(
-  <Root initialState={{}}>
+  <Root>
     <React.StrictMode>
       <App />
     </React.StrictMode>

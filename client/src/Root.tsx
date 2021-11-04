@@ -1,8 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import createStore from './store/createStore';
+import { State } from './store/interfaces/State';
 
-const Root = ({ children, initialState = {} }) => {
+interface Props {
+  children: JSX.Element;
+  initialState?: State;
+}
+
+const Root = ({ children, initialState }: Props) => {
   const store = createStore(initialState);
   return <Provider store={store}>{children}</Provider>;
 };

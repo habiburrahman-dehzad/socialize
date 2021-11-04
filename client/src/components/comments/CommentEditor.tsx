@@ -1,7 +1,19 @@
 import React from 'react';
 import { Form, Button, Input } from 'antd';
 
-const CommentEditor = ({ onChange, onSubmit, submitting, value }) => {
+interface Props {
+  onChange: React.ChangeEventHandler<HTMLTextAreaElement>;
+  onSubmit: React.MouseEventHandler<HTMLElement>;
+  submitting: boolean;
+  value: string;
+}
+
+const CommentEditor: React.FC<Props> = ({
+  onChange,
+  onSubmit,
+  submitting,
+  value,
+}) => {
   const { TextArea } = Input;
 
   return (

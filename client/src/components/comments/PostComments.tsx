@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
-import { Comment, Avatar, Card } from 'antd';
+import { Comment as CommentElement, Avatar, Card } from 'antd';
 import CommentList from './CommentList';
 import CommentEditor from './CommentEditor';
 import moment from 'moment';
 
+interface Comment {
+  author: string;
+  avatar: string;
+  content: JSX.Element;
+  datetime: string;
+}
+
 const PostComments = () => {
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState<Comment[]>([]);
   const [submitting, setSubmitting] = useState(false);
   const [value, setValue] = useState('');
 
@@ -32,14 +39,14 @@ const PostComments = () => {
     }, 1000);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setValue(e.target.value);
   };
 
   return (
     <Card style={{ marginTop: '40px' }}>
       {comments.length > 0 && <CommentList comments={comments} />}
-      <Comment
+      <CommentElement
         avatar={
           <Avatar
             src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'

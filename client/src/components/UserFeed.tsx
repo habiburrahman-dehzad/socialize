@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Descriptions, Avatar } from 'antd';
+import { Card, Avatar } from 'antd';
 import {
   SettingOutlined,
   EditOutlined,

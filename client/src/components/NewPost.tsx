@@ -6,11 +6,13 @@ const NewPost = () => {
 
   const { TextArea } = Input;
 
-  const handlePosting = (e) => {
+  const handlePosting = (e: React.MouseEvent<HTMLElement>) => {
+    if (!text) return;
+
     console.log(text);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
   };
 

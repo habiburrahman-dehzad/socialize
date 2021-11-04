@@ -1,13 +1,16 @@
-const express = require('express');
+import { Request, Response } from 'express';
+
+import express from 'express';
+import { check, validationResult } from 'express-validator';
+
 const router = express.Router();
-const { check, validationResult } = require('express-validator');
 
 // const Todo = require('../../models/Todo');
 
 // @route       GET api/test
 // @desc        Get a test message
 // @access      Public
-router.get('/', async (req, res) => {
+router.get('/', async (req: Request, res: Response) => {
   res.send('Hello this is the test GET handler from Socialize server');
 });
 
@@ -17,7 +20,7 @@ router.get('/', async (req, res) => {
 router.post(
   '/',
   [check('title', 'Title is required').not().isEmpty()],
-  async (req, res) => {
+  async (req: Request, res: Response) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
@@ -27,4 +30,4 @@ router.post(
   }
 );
 
-module.exports = router;
+export default router;
